@@ -35,6 +35,7 @@ struct StudentView: View {
                     .tag(Tabs.profile)
                 
             }.navigationTitle(selectedTab.rawValue.capitalized)
+                
         }
     }
 }

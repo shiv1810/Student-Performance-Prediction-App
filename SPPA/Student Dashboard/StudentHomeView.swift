@@ -7,33 +7,44 @@ import SwiftUI
 
 struct StudentHomeView: View {
     var body: some View {
-        VStack {
-            
-            HStack{
-                Text("Essentials")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding(.bottom)
-                    .padding(.leading)
-                
-                
-                Spacer()
-                
-            }
-            
-            LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
-                ForEach(["Attendance", "Predictions", "Announcements", "More"], id: \.self) { item in
-                    NavigationLink(destination: Text(item + " Details")) {
-                        ColorCard(color: colorForItem(item), text: item, systemImage: systemImageForItem(item))
+        ScrollView {
+            VStack {
+                ScrollView(.horizontal) {
+                    HStack(spacing: 2) { // Add spacing between images
+                        ForEach(1...9, id: \.self) { index in
+                            Image("\(index)").frame(width: 200, height: 500)
+                        }
                     }
-                    .buttonStyle(PlainButtonStyle()) // To remove the default button style
+                    .padding(.bottom)
+                    .ignoresSafeArea()
                 }
+                HStack{
+                    Text("Essentials")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.bottom)
+                        .padding(.leading)
+                        .padding(.top)
+                    
+                    
+                    Spacer()
+                    
+                }
+                
+                LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
+                    ForEach(["Attendance", "Predictions", "Announcements", "More"], id: \.self) { item in
+                        NavigationLink(destination: Text(item + " Details")) {
+                            ColorCard(color: colorForItem(item), text: item, systemImage: systemImageForItem(item))
+                        }
+                        .buttonStyle(PlainButtonStyle()) // To remove the default button style
+                    }
+                }
+                .padding(16)
             }
-            .padding(16)
-        }
+        }.ignoresSafeArea()
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 struct ColorCard: View {
     let color: Color
     let text: String
