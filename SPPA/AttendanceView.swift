@@ -4,15 +4,37 @@
 //
 //  Created by Shiv Mistry on 24/02/24.
 //
-
 import SwiftUI
+import Charts
 
 struct AttendanceView: View {
+    
+    private var coffeeSales = [
+        (name: "Americano", count: 120),
+        (name: "Cappuccino", count: 234),
+        (name: "Espresso", count: 62),
+        (name: "Latte", count: 625),
+        (name: "Mocha", count: 320),
+        (name: "Affogato", count: 50)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Chart {
+            ForEach(coffeeSales, id: \.name) { coffee in
+                
+                SectorMark(
+                    angle: .value("Cup", coffee.count)
+                )
+                .foregroundStyle(by: .value("Type", coffee.name))
+            }
+        }
+        .frame(height: 500)
     }
 }
 
-#Preview {
-    AttendanceView()
+struct AttendanceView_Previews: PreviewProvider {
+    static var previews: some View {
+        AttendanceView()
+    }
 }
+    

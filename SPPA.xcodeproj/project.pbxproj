@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8625C68D2B8A4893003756E2 /* SwiftUICalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8625C68C2B8A4893003756E2 /* SwiftUICalendar */; };
+		8625C68F2B8A48CD003756E2 /* TimeTable View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625C68E2B8A48CD003756E2 /* TimeTable View.swift */; };
+		8625C6912B8A5A07003756E2 /* AttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625C6902B8A5A07003756E2 /* AttendanceView.swift */; };
+		8625C6942B8A7B9A003756E2 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 8625C6932B8A7B9A003756E2 /* CSV */; };
+		8625C6962B8B6023003756E2 /* GetMarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625C6952B8B6023003756E2 /* GetMarksView.swift */; };
 		868266192B6EB60D00791D66 /* SPPA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 868266182B6EB60D00791D66 /* SPPA.mlmodel */; };
 		8682661B2B6F64F900791D66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8682661A2B6F64F900791D66 /* GoogleService-Info.plist */; };
 		8682661D2B70085E00791D66 /* StudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682661C2B70085E00791D66 /* StudentView.swift */; };
@@ -82,6 +87,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8625C68E2B8A48CD003756E2 /* TimeTable View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeTable View.swift"; sourceTree = "<group>"; };
+		8625C6902B8A5A07003756E2 /* AttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
+		8625C6952B8B6023003756E2 /* GetMarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarksView.swift; sourceTree = "<group>"; };
 		868266182B6EB60D00791D66 /* SPPA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SPPA.mlmodel; sourceTree = "<group>"; };
 		8682661A2B6F64F900791D66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8682661C2B70085E00791D66 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				86E059692B19FDAF00C70007 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				86E0598F2B19FDAF00C70007 /* FirebaseMLModelDownloader in Frameworks */,
 				86E059832B19FDAF00C70007 /* FirebaseFirestoreSwift in Frameworks */,
+				8625C68D2B8A4893003756E2 /* SwiftUICalendar in Frameworks */,
 				86E0596F2B19FDAF00C70007 /* FirebaseAppCheck in Frameworks */,
 				86E0596D2B19FDAF00C70007 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				86E059732B19FDAF00C70007 /* FirebaseAuth in Frameworks */,
@@ -157,6 +166,7 @@
 				86E059712B19FDAF00C70007 /* FirebaseAppDistribution-Beta in Frameworks */,
 				86E059752B19FDAF00C70007 /* FirebaseAuthCombine-Community in Frameworks */,
 				86E059932B19FDAF00C70007 /* FirebasePerformance in Frameworks */,
+				8625C6942B8A7B9A003756E2 /* CSV in Frameworks */,
 				86E0598B2B19FDAF00C70007 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				86E059992B19FDAF00C70007 /* FirebaseStorage in Frameworks */,
 				86E0597D2B19FDAF00C70007 /* FirebaseDynamicLinks in Frameworks */,
@@ -263,6 +273,7 @@
 			children = (
 				868266232B7013D100791D66 /* StudentHomeView.swift */,
 				8682661C2B70085E00791D66 /* StudentView.swift */,
+				8625C68E2B8A48CD003756E2 /* TimeTable View.swift */,
 				8682661E2B70087100791D66 /* Main-Student */,
 			);
 			path = "Student Dashboard";
@@ -294,6 +305,7 @@
 				86E059A02B1A094200C70007 /* StudentDataVM.swift */,
 				86E0595C2B18A8D300C70007 /* UploadMarksView.swift */,
 				86E059632B19FA8F00C70007 /* UpdateMarksView.swift */,
+				8625C6952B8B6023003756E2 /* GetMarksView.swift */,
 			);
 			path = "Upload Marks";
 			sourceTree = "<group>";
@@ -322,6 +334,7 @@
 				86EB74E72AFE3A5200B2FAB2 /* SPPAApp.swift */,
 				86C25BBC2B78F99C0062DC07 /* Charts */,
 				868266212B70121500791D66 /* ProfileView.swift */,
+				8625C6902B8A5A07003756E2 /* AttendanceView.swift */,
 				8682661F2B70093700791D66 /* FacultyView.swift */,
 				86E059542B18910500C70007 /* Faculty Dashboard */,
 				86E059532B1890F000C70007 /* Student Dashboard */,
@@ -386,6 +399,8 @@
 				86E059962B19FDAF00C70007 /* FirebaseRemoteConfigSwift */,
 				86E059982B19FDAF00C70007 /* FirebaseStorage */,
 				86E0599A2B19FDAF00C70007 /* FirebaseStorageCombine-Community */,
+				8625C68C2B8A4893003756E2 /* SwiftUICalendar */,
+				8625C6932B8A7B9A003756E2 /* CSV */,
 			);
 			productName = SPPA;
 			productReference = 86EB74E42AFE3A5200B2FAB2 /* SPPA.app */;
@@ -417,6 +432,8 @@
 			mainGroup = 86EB74DB2AFE3A5100B2FAB2;
 			packageReferences = (
 				86E059652B19FDAF00C70007 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8625C68B2B8A4893003756E2 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */,
+				8625C6922B8A7B9A003756E2 /* XCRemoteSwiftPackageReference "CSV.swift" */,
 			);
 			productRefGroup = 86EB74E52AFE3A5200B2FAB2 /* Products */;
 			projectDirPath = "";
@@ -445,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8625C6962B8B6023003756E2 /* GetMarksView.swift in Sources */,
 				86F6DDA22B127D6D006FF259 /* SideMenuBarView.swift in Sources */,
 				86E0595B2B18A88400C70007 /* F-SideMenuBarView.swift in Sources */,
 				86E059642B19FA8F00C70007 /* UpdateMarksView.swift in Sources */,
@@ -459,6 +477,7 @@
 				868266192B6EB60D00791D66 /* SPPA.mlmodel in Sources */,
 				86E0599F2B1A035900C70007 /* StudentData.swift in Sources */,
 				86C25C262B78F99C0062DC07 /* ContentView.swift in Sources */,
+				8625C68F2B8A48CD003756E2 /* TimeTable View.swift in Sources */,
 				86C25BFA2B78F99C0062DC07 /* Pupil.swift in Sources */,
 				86C25C122B78F99C0062DC07 /* SalesPerBookCategoryPieChartView.swift in Sources */,
 				86E059562B1898D600C70007 /* CredentialsView.swift in Sources */,
@@ -469,6 +488,7 @@
 				86C25C0B2B78F99C0062DC07 /* WeeklySalesChartView.swift in Sources */,
 				868266202B70093700791D66 /* FacultyView.swift in Sources */,
 				86C25C0F2B78F99C0062DC07 /* SimpleSalesByWeekdayView.swift in Sources */,
+				8625C6912B8A5A07003756E2 /* AttendanceView.swift in Sources */,
 				86C25C2B2B79042D0062DC07 /* SalesPerBookCategoryStackedBarChartView.swift in Sources */,
 				86C25C152B78F99C0062DC07 /* SalesPerBookCategoryBarChartView.swift in Sources */,
 				86C25BFC2B78F99C0062DC07 /* Topic.swift in Sources */,
@@ -694,6 +714,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8625C68B2B8A4893003756E2 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GGJJack/SwiftUICalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.14;
+			};
+		};
+		8625C6922B8A7B9A003756E2 /* XCRemoteSwiftPackageReference "CSV.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.3;
+			};
+		};
 		86E059652B19FDAF00C70007 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -705,6 +741,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8625C68C2B8A4893003756E2 /* SwiftUICalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8625C68B2B8A4893003756E2 /* XCRemoteSwiftPackageReference "SwiftUICalendar" */;
+			productName = SwiftUICalendar;
+		};
+		8625C6932B8A7B9A003756E2 /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8625C6922B8A7B9A003756E2 /* XCRemoteSwiftPackageReference "CSV.swift" */;
+			productName = CSV;
+		};
 		86E059662B19FDAF00C70007 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86E059652B19FDAF00C70007 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

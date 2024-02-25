@@ -42,6 +42,13 @@ struct ProfileView: View {
                     Divider()
                 }
             }
+            
+            
+            NavigationLink("Logout") {
+                SignIn_StudentView()
+                    .navigationBarBackButtonHidden(true) // 1
+                
+            }
         }
         .navigationBarItems(
             leading: Text("Premium Member")
@@ -52,6 +59,7 @@ struct ProfileView: View {
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
         )
+        
     }
 }
 

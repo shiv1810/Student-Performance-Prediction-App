@@ -7,18 +7,27 @@ import SwiftUI
 
 struct StudentHomeView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical) {
             VStack {
                 ScrollView(.horizontal) {
-                    HStack(spacing: 2) { // Add spacing between images
-                        ForEach(1...9, id: \.self) { index in
-                            Image("\(index)").frame(width: 200, height: 500)
+                    HStack(spacing: 1) {
+                        ForEach(1...2, id: \.self) { index in
+                            CardView(imageName: "\(index)")
+                        }
+                        .scrollTransition { content, phase in
+                            content
+                                .opacity(phase.isIdentity ? 1.0 : 0.0)
+                                .scaleEffect(x: phase.isIdentity ? 1.0 : 0.7, y: phase.isIdentity ? 1.0 : 0.7)
+                                .offset(y: phase.isIdentity ? 0 : 40)
                         }
                     }
                     .padding(.bottom)
                     .ignoresSafeArea()
+                    .scrollTargetLayout()
                 }
-                HStack{
+                .contentMargins(1, for: .scrollContent)
+                
+                HStack {
                     Text("Essentials")
                         .font(.title)
                         .fontWeight(.bold)
@@ -26,25 +35,72 @@ struct StudentHomeView: View {
                         .padding(.leading)
                         .padding(.top)
                     
-                    
                     Spacer()
-                    
                 }
                 
                 LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
-                    ForEach(["Attendance", "Predictions", "Announcements", "More"], id: \.self) { item in
-                        NavigationLink(destination: Text(item + " Details")) {
+                    ForEach(["Attendance", "Predictions", "Time Table", "More"], id: \.self) { item in
+                        NavigationLink(destination: destinationForItem(item)) {
                             ColorCard(color: colorForItem(item), text: item, systemImage: systemImageForItem(item))
                         }
-                        .buttonStyle(PlainButtonStyle()) // To remove the default button style
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .padding(16)
+                .padding(.bottom, 90)
             }
-        }.ignoresSafeArea()
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        .ignoresSafeArea()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
+
+struct CardView: View {
+    let imageName: String
+    
+    var body: some View {
+        ZStack(alignment: .bottomLeading) {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 400, height: 600)
+                .cornerRadius(20)
+                .opacity(0.8)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Button(action: {
+                    // Your button action here
+                }) {
+                    Button {
+                        print("Button was tapped")
+                    } label: {
+                        Text("Predict Here!")
+                            .padding()
+                            .foregroundStyle(.white)
+//                            .background(.blue)
+//                            .hoverEffect(.lift)
+                            .background(
+                                        RoundedRectangle(
+                                            cornerRadius: 12,
+                                            style: .continuous
+                                        )
+                                        .stroke(.white, lineWidth: 2)
+
+                                    )
+                    }
+                }
+                HStack {
+                    Text("You can now predict your upcoming Semesters CGPA here")
+                        .foregroundColor(.white)
+                        .fontWeight(.light)
+                        .italic()
+                }
+            }
+            .padding()
+        }
+        .frame(width: 400, height: 600)
+    }
+}
+
 struct ColorCard: View {
     let color: Color
     let text: String
@@ -52,26 +108,24 @@ struct ColorCard: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 20) // Increased corner radius for rounded corners
+            RoundedRectangle(cornerRadius: 20)
                 .fill(color)
-                .frame(height: 120) // Increased height for larger cards
-                .opacity(0.8) // Adjusted opacity for a more vibrant appearance
+                .frame(height: 120)
+                .opacity(0.8)
                 .overlay(
-                    VStack{
-                        HStack{
+                    VStack {
+                        HStack {
                             Image(systemName: systemImage)
                                 .font(.system(size: 25))
                                 .padding(.leading, 10)
                                 .padding(.top, 5)
-                                // Increased font size for larger system image
                             Spacer()
                             Image(systemName: "ellipsis.circle.fill")
                                 .font(.system(size: 28))
-                                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)// Increased font size for larger system image
+                                .padding(.all, 10)
                         }
-                        
                         Spacer()
-                        HStack{
+                        HStack {
                             Text(text)
                                 .font(.body)
                                 .foregroundColor(.white)
@@ -79,36 +133,34 @@ struct ColorCard: View {
                             Spacer()
                         }
                     }
-            )
+                )
         }
     }
 }
 
-// Helper function to assign a color based on the item name
 func colorForItem(_ item: String) -> Color {
     switch item {
     case "Attendance":
-        return Color.blue.opacity(0.9) // Adjusted opacity for a more vibrant appearance
+        return Color.blue.opacity(0.9)
     case "Predictions":
-        return Color.green.opacity(0.9) // Adjusted opacity for a more vibrant appearance
-    case "Announcements":
-        return Color.orange.opacity(0.9) // Adjusted opacity for a more vibrant appearance
+        return Color.green.opacity(0.9)
+    case "Time Table":
+        return Color.orange.opacity(0.9)
     case "More":
-        return Color.purple.opacity(0.9) // Adjusted opacity for a more vibrant appearance
+        return Color.purple.opacity(0.9)
     default:
-        return Color.gray.opacity(0.9) // Adjusted opacity for a more vibrant appearance
+        return Color.gray.opacity(0.9)
     }
 }
 
-// Helper function to assign a system image based on the item name
 func systemImageForItem(_ item: String) -> String {
     switch item {
     case "Attendance":
         return "calendar"
     case "Predictions":
         return "chart.xyaxis.line"
-    case "Announcements":
-        return "megaphone.fill"
+    case "Time Table":
+        return "clock"
     case "More":
         return "plus.app"
     default:
@@ -116,7 +168,20 @@ func systemImageForItem(_ item: String) -> String {
     }
 }
 
-struct HomeScreen_Previews: PreviewProvider {
+func destinationForItem(_ item: String) -> some View {
+    switch item {
+    case "Attendance":
+        return AnyView(Text("Attendance Details"))
+    case "Predictions":
+        return AnyView(CredentialsView())
+    case "Time Table":
+        return AnyView(TimeTable_View())
+    default:
+        return AnyView(ProfileView())
+    }
+}
+
+struct StudentHomeView_Previews: PreviewProvider {
     static var previews: some View {
         StudentHomeView()
     }
