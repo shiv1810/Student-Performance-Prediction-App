@@ -22,6 +22,42 @@ This iOS app is designed to predict student performance based on various factors
 - CoreML model for predictive analytics
 - Graph library (e.g., Charts, Core Plot)
 
+- ## CoreML Model Integration
+
+The CoreML model used in this app was created and trained using Python, leveraging the scikit-learn library for machine learning tasks. The model is designed to predict student performance based on various input parameters.
+
+### Model Training Process
+
+1. **Data Collection:** A dataset containing relevant student information, including marks and other factors, was gathered for training the model.
+
+2. **Feature Engineering:** The dataset underwent preprocessing and feature engineering to extract meaningful insights that contribute to predicting student performance.
+
+3. **Model Training:** The scikit-learn library was employed to train the machine learning model on the prepared dataset, optimizing it for accurate performance predictions.
+
+4. **Validation:** The model's performance was validated using appropriate evaluation metrics to ensure its effectiveness.
+
+### CoreML Conversion
+
+After the model was trained and validated in Python, it was converted to the CoreML format using the tools provided in the Apple documentation. This ensures seamless integration into the iOS app, allowing for real-time predictions on user devices.
+
+## User Roles and Functionality
+
+The app caters to two main user roles: **Student** and **Faculty**.
+
+### Student
+
+- **View Marks:** Students can access their academic performance data through the app.
+  
+- **Update Effort Metrics:** Students have the ability to update effort-related metrics, such as absences and study time, through an in-app form. This provides a dynamic way for students to contribute to their performance analysis.
+
+### Faculty
+
+- **CRUD Operations on Marks:** Faculty members have full control over student marks, enabling them to Create, Read, Update, and Delete (CRUD) records as needed.
+
+- **Monitoring and Analysis:** Faculty members can use the dashboard to monitor student performance trends and gain insights into academic progress.
+
+This dual functionality caters to both students and faculty, offering a comprehensive educational experience within the app.
+
 ## Installation
 
 1. Clone the repository:
