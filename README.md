@@ -22,7 +22,7 @@ This iOS app is designed to predict student performance based on various factors
 - CoreML model for predictive analytics
 - Graph library (e.g., Charts, Core Plot)
 
-- ## CoreML Model Integration
+## CoreML Model Integration
 
 The CoreML model used in this app was created and trained using Python, leveraging the scikit-learn library for machine learning tasks. The model is designed to predict student performance based on various input parameters.
 
