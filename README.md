@@ -36,7 +36,7 @@ The CoreML model used in this app was created and trained using Python, leveragi
 
 4. **Validation:** The model's performance was validated using appropriate evaluation metrics to ensure its effectiveness.
 
-### CoreML Conversion
+## CoreML Conversion
 
 After the model was trained and validated in Python, it was converted to the CoreML format using the tools provided in the Apple documentation. This ensures seamless integration into the iOS app, allowing for real-time predictions on user devices.
 
@@ -105,6 +105,35 @@ This dual functionality caters to both students and faculty, offering a comprehe
 2. Sign in or create a new account using Firebase Authentication.
 3. Explore the dashboard to view student performance visualizations.
 4. Use the input features to predict student performance using the integrated CoreML model.
+
+## Project Scope and Ongoing Development
+
+**Note:** This repository focuses on the iOS side of the Student Performance Prediction App. Simultaneously, development for the Android counterpart is in progress, enhancing the overall scope and complexity of the project.
+
+### iOS Development
+
+The iOS portion of the project encompasses the integration of Firebase, Firestore, CoreML for predictive analytics, and a graph library for visualization. It caters to both student and faculty roles, providing a user-friendly interface for accessing and updating academic data.
+
+### Android Development (Work in Progress)
+
+The Android side of the project is currently under active development. It aims to mirror the functionality and features implemented on the iOS platform. This includes integrating Firebase and Firestore for backend services, incorporating a CoreML model for predictive analytics, and implementing a graph library for visualizing data on the Android platform.
+
+### Ongoing Complexity
+
+As the project is ongoing, the complexity is expected to increase with the introduction of new features, optimizations, and the synchronization of functionality between the iOS and Android platforms. Future enhancements may include additional machine learning models, improved visualizations, and extended capabilities for both students and faculty.
+
+## Contributing
+
+Contributions to the project, whether for iOS or Android development, are welcome. If you're interested in contributing, please refer to the [Contribution Guidelines](CONTRIBUTING.md) for more information.
+
+## Roadmap
+
+The project roadmap includes plans for feature additions, bug fixes, and the eventual release of both iOS and Android versions. Regular updates will be made to accommodate changes in technology and user requirements.
+
+## Stay Informed
+
+Stay informed about project updates, announcements, and new releases by following our GitHub repository. Feel free to open issues, provide feedback, or contribute to the ongoing development of this comprehensive student performance management system.
+
 
 ## Contributing
 
